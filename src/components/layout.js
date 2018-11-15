@@ -19,6 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <Helmet 
           title={data.site.siteMetadata.title}
           meta={[
