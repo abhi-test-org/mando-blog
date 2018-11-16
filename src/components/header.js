@@ -74,6 +74,7 @@ const styles = theme => ({
     }),
     marginLeft: 0,
   },
+  toolbar: theme.mixins.toolbar,
 });
 
 class Header extends Component {
@@ -119,12 +120,14 @@ class Header extends Component {
             [classes.appBarShift]: open,
           })}>
           <Toolbar disableGutters={!open}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton 
+              color="inherit" 
+              aria-label="Menu" 
+              onClick={this.handleDrawerOpen}
+              className={classNames(classes.menuButton, open && classes.hide)}>
               <Icon 
                 color="inherit"
-                aria-label="Open drawer"
-                onClick={this.handleDrawerOpen}
-                className={classNames(classes.menuButton, open && classes.hide)}>
+                aria-label="Open drawer">
                   menu
               </Icon>
             </IconButton>
@@ -150,7 +153,7 @@ class Header extends Component {
             </IconButton>
           </div>
           <Divider />
-          {/* <List>
+          <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <Icon > inbox </Icon> : <Icon > mail </Icon>}</ListItemIcon>
@@ -166,7 +169,7 @@ class Header extends Component {
                 <ListItemText primary={text} />
               </ListItem>
             ))}
-          </List> */}
+          </List>
         </Drawer>
 
 
