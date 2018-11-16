@@ -74,7 +74,6 @@ const styles = theme => ({
     }),
     marginLeft: 0,
   },
-  toolbar: theme.mixins.toolbar,
 });
 
 class Header extends Component {
@@ -171,8 +170,6 @@ class Header extends Component {
             ))}
           </List>
         </Drawer>
-
-
       </div>
     )
     
