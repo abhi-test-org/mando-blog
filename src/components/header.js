@@ -14,6 +14,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import { navigate } from 'gatsby';
 
 // This implementation follows the design for the "Persistent Drawer" at https://material-ui.com/demos/drawers/
 
@@ -153,21 +154,32 @@ class Header extends Component {
           </div>
           <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <Icon > inbox </Icon> : <Icon > mail </Icon>}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
+            <ListItem button onClick={() => navigate('/')}>
+              <ListItemIcon> <Icon > home </Icon> </ListItemIcon>
+              <ListItemText> Home Page </ListItemText>
+            </ListItem>
           </List>
-          <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <Icon > inbox </Icon> : <Icon > mail </Icon>}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
+            <ListItem button >
+              <ListItemIcon> <Icon> computer </Icon> </ListItemIcon>
+              <ListItemText> Tech Blog </ListItemText>
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon> <Icon> videogame_asset </Icon> </ListItemIcon>
+              <ListItemText> Gaming Blog </ListItemText>
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon> <Icon> sentiment_very_satisfied </Icon> </ListItemIcon>
+              <ListItemText> Buy Me Coffee </ListItemText>
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>
+              <ListItemText> Github </ListItemText>
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>
+              <ListItemText> LinkedIn </ListItemText>
+            </ListItem>
           </List>
         </Drawer>
       </div>
