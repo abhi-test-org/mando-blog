@@ -14,7 +14,7 @@ import Img from 'gatsby-image'
  */
 
 const Image = () => (
-  <StaticQuery
+  <StaticQuery 
     query={graphql`
       query {
         placeholderImage: file(relativePath: { eq: "kirby.png" }) {

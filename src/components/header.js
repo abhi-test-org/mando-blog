@@ -17,7 +17,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { navigate } from 'gatsby';
 
 // This implementation follows the design for the "Persistent Drawer" at https://material-ui.com/demos/drawers/
-
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -158,25 +157,23 @@ class Header extends Component {
               <ListItemIcon> <Icon > home </Icon> </ListItemIcon>
               <ListItemText> Home Page </ListItemText>
             </ListItem>
-          </List>
-          <List>
-            <ListItem button >
+            <ListItem button onClick={() => navigate('/blog/')}>
               <ListItemIcon> <Icon> computer </Icon> </ListItemIcon>
-              <ListItemText> Tech Blog </ListItemText>
+              <ListItemText> Blog </ListItemText>
             </ListItem>
-            <ListItem button >
-              <ListItemIcon> <Icon> videogame_asset </Icon> </ListItemIcon>
-              <ListItemText> Gaming Blog </ListItemText>
+            <ListItem button onClick={() => navigate('/app-library/')}>
+              <ListItemIcon> <Icon> smartphone </Icon> </ListItemIcon>
+              <ListItemText> App Library </ListItemText>
             </ListItem>
-            <ListItem button >
+            <ListItem button onClick={() => navigate('/tips/')}>
               <ListItemIcon> <Icon> sentiment_very_satisfied </Icon> </ListItemIcon>
               <ListItemText> Buy Me Coffee </ListItemText>
             </ListItem>
-            <ListItem button >
+            <ListItem button component="a" href='https://github.com/ax-vasquez/mando-blog'>
               <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>
               <ListItemText> Github </ListItemText>
             </ListItem>
-            <ListItem button >
+            <ListItem button component="a" href="https://www.linkedin.com/in/axvasquez/" >
               <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>
               <ListItemText> LinkedIn </ListItemText>
             </ListItem>
