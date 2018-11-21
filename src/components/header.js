@@ -16,63 +16,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { navigate } from 'gatsby';
 
-// This implementation follows the design for the "Persistent Drawer" at https://material-ui.com/demos/drawers/
-const drawerWidth = 240;
+import headerStyles from './header.module.css'
 
 const styles = theme => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20,
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
   },
 });
 
@@ -99,14 +51,13 @@ class Header extends Component {
 
   render() {
 
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
     const { open } = this.state;
 
     return(
       <div 
-        className={classes.root}
+        className={headerStyles.root}
         style={{
-          background: this.props.backgroundColor,
           marginBottom: '1.45rem',
         }}
       >
@@ -115,15 +66,16 @@ class Header extends Component {
         {/* App Bar */}
         <AppBar 
           position="fixed"
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}>
+          className={classNames(headerStyles.appBar, {
+            [headerStyles.appBarShift]: open,
+          })}
+          color="primary">
           <Toolbar disableGutters={!open}>
             <IconButton 
               color="inherit" 
               aria-label="Menu" 
               onClick={this.handleDrawerOpen}
-              className={classNames(classes.menuButton, open && classes.hide)}>
+              className={classNames(headerStyles.menuButton, open && headerStyles.hide)}>
               <Icon 
                 color="inherit"
                 aria-label="Open drawer">
@@ -138,12 +90,12 @@ class Header extends Component {
 
         {/* Drawer */}
         <Drawer
-          className={classes.drawer}
+          className={headerStyles.drawer}
           variant="persistent"
           anchor="left"
           open={open}
           classes={{
-            paper: classes.drawerPaper,
+            paper: headerStyles.drawerPaper,
           }}
         >
           <div className={classes.drawerHeader}>
@@ -168,6 +120,10 @@ class Header extends Component {
             <ListItem button onClick={() => navigate('/tips/')}>
               <ListItemIcon> <Icon> sentiment_very_satisfied </Icon> </ListItemIcon>
               <ListItemText> Buy Me Coffee </ListItemText>
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>
+              <ListItemText> Resume </ListItemText>
             </ListItem>
             <ListItem button component="a" href='https://github.com/ax-vasquez/mando-blog'>
               <ListItemIcon> <Icon> keyboard_arrow_right </Icon> </ListItemIcon>

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Mando Blog',
+    title: 'axv.me',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

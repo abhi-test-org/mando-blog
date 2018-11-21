@@ -4,9 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { navigate } from '@reach/router';
-import { CardMedia, withStyles } from '@material-ui/core';
-
-import Image from '../components/image'
+import { withStyles } from '@material-ui/core';
 
 const styles = {
     card: {
@@ -22,7 +20,7 @@ class HomePageCard extends Component {
 
     render() {
 
-        const { title, description, path, classes, imageObj } = this.props
+        const { title, description, path, imageObj } = this.props
 
         return(
             <Card onClick={() => navigate( path )}>

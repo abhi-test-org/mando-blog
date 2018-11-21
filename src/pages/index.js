@@ -1,17 +1,24 @@
 import React from 'react'
-import { Link, navigate } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import HomePageCard from '../components/home-page-card';
+import { Typography } from '@material-ui/core';
 
 const IndexPage = (props) => (
   <Layout>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}  >
-      <Image />
-    </div>
     <div>
+      <div>
+        <Typography variant="h3" component="h1">
+          Armando Vasquez
+        </Typography>
+        <br />
+        <Typography component="p">
+          I'm a software developer 
+        </Typography>
+      </div>
+      <br />
       <HomePageCard 
         imageObj={ <Img fluid={props.data.blogHeaderImage.childImageSharp.fluid} /> }
         title="Blog" 

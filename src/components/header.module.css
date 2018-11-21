@@ -1,0 +1,43 @@
+
+.root {
+    display: 'flex';
+}
+
+.appBar {
+    /* transition-duration: 2s; FIND THE RIGHT WAY TO SET DURATION - THIS IS UNUSED */
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.appBarShift {
+    width: calc(100% - 240px) !important;
+    margin-left: 240px !important;
+    /* transition-duration: 2s; FIND THE RIGHT WAY TO SET DURATION - THIS IS UNUSED */
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* 
+    UNDERSTAND CASCADING - these settings are only applied when you use !important
+        - Using !important is basically like beating your code with a rock to make it work
+        - The better solution is to find the right way to implement the margins the way the Material UI is doing it
+ */
+.menuButton {
+    margin-left: 12px !important;
+    margin-right: 20px !important;
+}
+
+.hide {
+    display: 'none';
+}
+
+.drawer {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.drawerPaper {
+    width: 240px;
+}
+
+.contentShift {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
