@@ -39,12 +39,14 @@ class Header extends Component {
 
   handleDrawerOpen = () => {
     this.setState((state) => { 
+      this.props.sideMenuOpenCallback( true )
       return {open: state.open = true} }
     );
   };
 
   handleDrawerClose = () => {
     this.setState((state) => { 
+      this.props.sideMenuOpenCallback( false )
       return {open: state.open = false} }
     );
   };
