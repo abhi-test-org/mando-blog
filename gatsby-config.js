@@ -12,6 +12,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/blog-posts`,
+        name: "markdown-pages",
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: `@wapps/gatsby-plugin-material-ui`,
       options: {
         // Add any options here
