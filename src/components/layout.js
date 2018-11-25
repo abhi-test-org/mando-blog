@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import Grid from '@material-ui/core/Grid';
 
 import Header from './header'
 import './layout.css'
@@ -55,9 +56,8 @@ class Layout extends Component {
             <Header 
               siteTitle={data.site.siteMetadata.title}
               sideMenuOpenCallback={this.sideMenuStateCallback} />
-            <main 
+            <Grid container
               style={{
-                margin: '0 auto',
                 maxWidth: 960,
                 padding: '0px 1.0875rem 1.45rem',
                 paddingTop: 50 ,
@@ -66,8 +66,10 @@ class Layout extends Component {
                 [layoutStyle.contentShift]: this.state.sideMenuOpen,
               })}
             >
-              {this.props.children}
-            </main>
+              <Grid item xs={12}>
+                {this.props.children}
+              </Grid>
+            </Grid>
           </>
         )}
       />
