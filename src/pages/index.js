@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Grid from '@material-ui/core/Grid';
 
 import Layout from '../components/layout'
 import HomePageCard from '../components/home-page-card';
@@ -8,7 +9,7 @@ import { Typography } from '@material-ui/core';
 
 const IndexPage = (props) => (
   <Layout>
-    <div>
+    <Grid item xs={12}>
       <div>
         <Typography variant="h3" component="h1">
           Armando Vasquez
@@ -36,7 +37,7 @@ const IndexPage = (props) => (
         title="Buy Me Coffee" 
         path="/tips/" 
         description="Tips are much appreciated! :)" />
-    </div>
+    </Grid>
   </Layout>
 )
 

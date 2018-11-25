@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { navigate } from '@reach/router';
 
+// Component for a single blog post item in the blog feed
 class PostLink extends Component {
 
   render() {

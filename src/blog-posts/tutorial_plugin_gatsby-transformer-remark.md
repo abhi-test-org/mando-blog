@@ -4,8 +4,7 @@ date: "2018-11-24"
 title: "The gatsby-transformer-remark Plugin"
 ---
 
-# [`gatsby-transformer-remark`](https://www.gatsbyjs.org/docs/adding-markdown-pages/#transforming-markdown--gatsby-transformer-remark) Plugin
-The `gatsby-transformer-remark` plugin tells Gatsby how to recognize files which are markdown and read the contents. _This plugin must be used if you intend to use markdown files as a source of content in your Gatsby site_.
+The [`gatsby-transformer-remark`](https://www.gatsbyjs.org/docs/adding-markdown-pages/#transforming-markdown--gatsby-transformer-remark) plugin tells Gatsby how to recognize files which are markdown and read the contents. _This plugin must be used if you intend to use markdown files as a source of content in your Gatsby site_.
 
 ## The Markdown Files
 The format you use for the markdown files does not matter _**EXCEPT**_ for the "frontmatter" of the markdown document - _the frontmatter block must be present in all markdown files used by this plugin_. Frontmatter for a markdown document looks like the following:

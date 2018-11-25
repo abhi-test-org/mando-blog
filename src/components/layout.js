@@ -66,9 +66,15 @@ class Layout extends Component {
                 [layoutStyle.contentShift]: this.state.sideMenuOpen,
               })}
             >
-              <Grid item xs={12}>
-                {this.props.children}
-              </Grid>
+              {/* 
+              !!!!!IMPORTANT!!!!!
+              In order for the grid to work properly, you must implement a Grid component nested JUST INSIDE
+              any usage of this Layout component - think of this layout component as the Grid container (because it is)
+              and that most components implemented beyond this point are Grid ITEMS - in some cases, it may be necessary
+              to create a nested Grid container (if you need to have a separate grid from the parent grid - e.g. in a nested
+              card view)
+               */}
+              {this.props.children}
             </Grid>
           </>
         )}

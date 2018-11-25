@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostLink from "../components/post-link"
 import Layout from '../components/layout'
+import Grid from '@material-ui/core/Grid';
 
 const IndexPage = ({
   data: {
@@ -14,7 +15,9 @@ const IndexPage = ({
 
   return(
     <Layout>
-      {Posts}
+      <Grid item xs={12}>
+        {Posts}
+      </Grid>
     </Layout>
   ) 
 }
