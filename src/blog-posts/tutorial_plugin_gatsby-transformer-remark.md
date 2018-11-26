@@ -1,7 +1,7 @@
 ---
 path: "/blog/gatsby-transformer-remark-plugin"
 date: "2018-11-24" 
-title: "The gatsby-transformer-remark Plugin"
+title: "Gatsby Plugin: gatsby-transformer-remark"
 ---
 
 The [`gatsby-transformer-remark`](https://www.gatsbyjs.org/docs/adding-markdown-pages/#transforming-markdown--gatsby-transformer-remark) plugin tells Gatsby how to recognize files which are markdown and read the contents. _This plugin must be used if you intend to use markdown files as a source of content in your Gatsby site_.
@@ -20,7 +20,7 @@ title: "My first blog post"
   - **IMPORTANT**: _Any time you add or remove values to the frontmatter, YOU MUST RESTART YOUR GATSBY SITE_
     - Changes like this to the frontmatter block ARE NOT reflected in GraphQL after saving - the site needs to be rebuilt in order for the posts to contain the updated metadata
 - The rest of the markdown content is rendered by the plugin as HTML content
-  - It's format DOES NOT MATTER - this is just the markdown "content" rendered as HTML
+  - It's format does not matter - this is just the markdown "content" rendered as HTML
 
 ## Adding a Source
 With the plugin added, it's time to give your Gatsby site some markdown files to work with.
@@ -91,6 +91,5 @@ Launch your Gatsby site and navigate to `localhost:8000/__graphql` and play arou
 2. _**All Markdown files must be prefaced with a properly-formatted metadata block**_
     - See section "The Markdown Files" above
 3. _**Changes made to `frontmatter` on Markdown files ARE NOT immediately reflected after saving when using `gatsby develop`**_
-    - It seems some changes are reflected, but GraphQL may behave strangely (like create erroneous null entries)
+    - It seems some changes are reflected, but GraphQL may behave strangely (like creating erroneous null entries)
     - To get around this, simply kill and restart the `gatsby develop` service after you make any changes to existing markdown files' metadata blocks
-4. 
